@@ -1,6 +1,7 @@
 import React, { use } from 'react';
+import Blog from './Blog';
 
-const Blogs = ({ fetchPromise }) => {
+const Blogs = ({ fetchPromise, handleFavorite, favorite }) => {
     const data = use(fetchPromise)
     return (
         <div className='bg-[#ebf0f5] px-24 py-24 font-sora'>
@@ -11,9 +12,24 @@ const Blogs = ({ fetchPromise }) => {
                 </p>
             </div>
             <div className=''>
-                {
-                    data.map(item => console.log(item))
-                }
+                <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100 lg:w-[70%]">
+                    <table className="table">
+                        {/* head */}
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Current Bid</th>
+                                <th>Time Left</th>
+                                <th>Bid Now</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                data.map(item => <Blog favorite={favorite} item={item} key={item.id} handleFavorite={handleFavorite}/>)
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );
