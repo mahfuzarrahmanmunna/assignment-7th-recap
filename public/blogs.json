@@ -1,0 +1,65 @@
+[
+    {
+        "id": "1",
+        "title": "Vintage Pocket Watch",
+        "description": "An antique gold pocket watch from the early 1900s, in excellent condition.",
+        "currentBidPrice": 150.00,
+        "timeLeft": "2h 30m",
+        "bidsCount": 8,
+        "image": "https://i.ibb.co.com/Kjh0ZC26/download-1.jpg"
+    },
+    {
+        "id": "2",
+        "title": "Signed Football Jersey",
+        "description": "Autographed jersey from a famous football player. Framed and authenticated.",
+        "currentBidPrice": 320.00,
+        "timeLeft": "5h 10m",
+        "bidsCount": 15,
+        "image": "https://i.ibb.co.com/bj05WW2g/2.jpg"
+    },
+    {
+        "id": "3",
+        "title": "Retro Game Console",
+        "description": "A fully functional SNES with two controllers and 5 classic games.",
+        "currentBidPrice": 220.50,
+        "timeLeft": "1d 4h",
+        "bidsCount": 22,
+        "image": "https://i.ibb.co.com/mVsTMSzv/3.jpg"
+    },
+    {
+        "id": "4",
+        "title": "Handmade Ceramic Vase",
+        "description": "Unique handcrafted vase with traditional floral patterns.",
+        "currentBidPrice": 78.00,
+        "timeLeft": "12h 45m",
+        "bidsCount": 5,
+        "image": "https://i.ibb.co.com/1G1Pz977/4.jpg"
+    },
+    {
+        "id": "5",
+        "title": "Bluetooth Noise-Canceling Headphones",
+        "description": "Brand new wireless headphones with 40 hours of battery life.",
+        "currentBidPrice": 99.99,
+        "timeLeft": "6h 20m",
+        "bidsCount": 13,
+        "image": "https://i.ibb.co.com/0pg4QTsf/5.jpg"
+    },
+    {
+        "id": "6",
+        "title": "Oil Painting Landscape",
+        "description": "Original oil painting of a mountain landscape by a local artist.",
+        "currentBidPrice": 305.00,
+        "timeLeft": "3d 1h",
+        "bidsCount": 19,
+        "image": "https://i.ibb.co.com/k2BXN1nt/6.jpg"
+    },
+    {
+        "id": "7",
+        "title": "Gaming Laptop",
+        "description": "High-performance laptop with RTX 3070 GPU, 16GB RAM, and 1TB SSD.",
+        "currentBidPrice": 1150.00,
+        "timeLeft": "10h 50m",
+        "bidsCount": 27,
+        "image": "https://i.ibb.co.com/BVYBGC3x/7.jpg"
+    }
+]
