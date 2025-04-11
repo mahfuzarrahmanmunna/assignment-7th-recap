@@ -1,8 +1,34 @@
-import React, { use } from 'react';
-import Blog from './Blog';
+import React, { use, useState } from 'react';
+import Blog from '../Blog/Blog';
+import { GoHeart } from "react-icons/go";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const Blogs = ({ fetchPromise, handleFavorite, favorite }) => {
+
+const Blogs = ({ fetchPromise }) => {
     const data = use(fetchPromise)
+    const [favorite, setFavorite] = useState([])
+    const [count, setCount] = useState(0)
+    const handleFavorite = (item, price) => {
+        setFavorite([...favorite, item])
+        toast.success('An item is added to favorites.')
+        handleAmount(price)
+    }
+    const handleAmount = (price) => {
+        setCount(count + price)
+    }
+
+    const handleRemoveFav = (id) => {
+        const itemToRemove = favorite.find(fav => fav.id === id)
+        if (itemToRemove) {
+            const remainFavorite = favorite.filter(fav => fav.id !== id)
+            const updateBidAmount = count - itemToRemove.currentBidPrice
+            setCount(updateBidAmount)
+            setFavorite(remainFavorite)
+            toast.warning('removed')
+        }
+
+    }
     return (
         <div className='bg-[#ebf0f5] px-24 py-24 font-sora'>
             <div>
@@ -12,8 +38,8 @@ const Blogs = ({ fetchPromise, handleFavorite, favorite }) => {
                 </p>
             </div>
             <div className='flex justify-between mt-12 gap-8 '>
-                <div className="py-3 overflow-x-auto rounded-3xl border border-base-content/5 bg-base-100 lg:w-[70%]">
-                    <table className=" table rounded-2xl border border-hidden border-[#443C68]">
+                <div className="py-3 overflow-x-auto rounded-3xl border border-base-content/5 bg-base-100 lg:w-[70%] shadow-xl">
+                    <table className=" table rounded-2xl border border-hidden border-[#443C68] ">
                         {/* head */}
                         <thead>
                             <tr>
@@ -29,8 +55,13 @@ const Blogs = ({ fetchPromise, handleFavorite, favorite }) => {
                             }
                         </tbody>
                     </table>
+                    <ToastContainer />
                 </div>
-                <div className='w-[30%] p-5 bg-white  rounded-3xl'>
+                <div className='w-[30%]  bg-white  rounded-3xl shadow-xl'>
+                    <div className='flex items-center justify-center py-2 text-xl font-medium text-blue-400 gap-2 border-b-2 border-gray-500 '>
+                        <GoHeart />
+                        <h1 className='text-center '> Favorite Items</h1>
+                    </div>
                     {favorite.length === 0 ? (
                         <div className='text-center  font-poppins py-14 '>
                             <h1 className='text-xl font-semibold '>No favorites yet</h1>
@@ -44,7 +75,7 @@ const Blogs = ({ fetchPromise, handleFavorite, favorite }) => {
                             <div className="overflow-x-auto " key={item.id}>
                                 <table className=' table'>
                                     <tbody className=''>
-                                        <tr className='rounded-box  border border-base-content/5 bg-base-100 my-2'>
+                                        <tr className='rounded-box  border border-base-content/5 bg-base-100 my-2 shadow-xl'>
                                             <td>
                                                 <img src={item.image} alt='' className='w-12 h-12' />
                                             </td>
@@ -60,7 +91,7 @@ const Blogs = ({ fetchPromise, handleFavorite, favorite }) => {
                                                 </div>
                                             </td>
                                             <td className=''>
-                                                <button className=' cursor-pointer text-xl '>
+                                                <button className=' cursor-pointer text-xl ' onClick={() => handleRemoveFav(item.id)}>
                                                     x
                                                 </button>
                                             </td>
@@ -72,6 +103,10 @@ const Blogs = ({ fetchPromise, handleFavorite, favorite }) => {
                         )
                     )
                     }
+                    <div className='border-t-2 border-gray-500 px-5 py-2 text-xl flex justify-between font-medium'>
+                        <h1>Total Amount : </h1>
+                        <h1>${count.toFixed(2)}</h1>
+                    </div>
                 </div>
             </div>
         </div>

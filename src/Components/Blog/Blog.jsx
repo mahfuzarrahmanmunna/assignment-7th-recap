@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, {  } from 'react';
 import { FaHeart } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 
 
 
 const Blog = ({ item, handleFavorite, favorite }) => {
-    const { image, id, title, bidsCount, currentBidPrice, description, timeLeft } = item
+    const { image, id, title, currentBidPrice, timeLeft } = item
 
     const isFavorite = favorite.find(fav => fav.id === id)
     // const handleFavorite = () => {
@@ -30,7 +30,7 @@ const Blog = ({ item, handleFavorite, favorite }) => {
                 {timeLeft}
             </td>
             <td>
-                <button onClick={() => handleFavorite(item)} disabled={isFavorite}>
+                <button onClick={() => handleFavorite(item, currentBidPrice)} disabled={isFavorite}>
                     {isFavorite ? (
                         <FaHeart size={26} className='text-red-500 cursor-not-allowed' />
                     ) : (
