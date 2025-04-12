@@ -30,14 +30,14 @@ const Blogs = ({ fetchPromise }) => {
 
     }
     return (
-        <div className='bg-[#ebf0f5] px-24 py-24 font-sora'>
+        <div className='bg-[#ebf0f5] lg:px-24 px-3 py-24 font-sora'>
             <div>
                 <h1 className='text-3xl text-[#0E2954] font-semibold'>Active Auction</h1>
                 <p className=''>
                     Discover and bid on extraordinary items
                 </p>
             </div>
-            <div className='flex justify-between mt-12 gap-8 '>
+            <div className='lg:flex justify-between mt-12 gap-8 '>
                 <div className="py-3 overflow-x-auto rounded-3xl border border-base-content/5 bg-base-100 lg:w-[70%] shadow-xl">
                     <table className=" table rounded-2xl border border-hidden border-[#443C68] ">
                         {/* head */}
@@ -57,7 +57,7 @@ const Blogs = ({ fetchPromise }) => {
                     </table>
                     <ToastContainer />
                 </div>
-                <div className='w-[30%]  bg-white  rounded-3xl shadow-xl'>
+                <div className='lg:w-[30%] lg:mt-0 mt-12  bg-white  rounded-3xl shadow-xl'>
                     <div className='flex items-center justify-center py-2 text-xl font-medium text-blue-400 gap-2 border-b-2 border-gray-500 '>
                         <GoHeart />
                         <h1 className='text-center '> Favorite Items</h1>

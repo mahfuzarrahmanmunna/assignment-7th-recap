@@ -2,7 +2,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className='h-[570px] px-24 bg-[url("https://i.ibb.co.com/tTW984BV/Banner-min.jpg")] bg-center bg-cover w-full'>
+        <div className='h-[570px] lg:px-24 px-3 bg-[url("https://i.ibb.co.com/tTW984BV/Banner-min.jpg")] bg-center bg-cover w-full'>
             <div className='text-white font-sora h-full flex justify-start items-center '>
                 <div className=''>
                     <h1 className=' font-semibold text-4xl'>
